@@ -1,16 +1,17 @@
 #!/usr/local/bin/python3.8
-
 # Python 3.8 or later required!
 
+# Time complexity: O(n)
 def pairs(nums, sum):
-    all = set()
-    dup = set()
-    [ x for x in nums if ((x in all) or all.add(x)) and dup.add(x) ]
-    return [(x,y) for x in all if (y := sum-x) >= x and y in all and (x != y or x in dup)]
+    all = set()                                                                             # Time complexity: O(1)
+    dup = set()                                                                             # Time complexity: O(1)
+    [ x for x in nums if ((x in all) or all.add(x)) and dup.add(x) ]                        # Time complexity: O(n)
+    return [(x,y) for x in all if (y := sum-x) >= x and y in all and (x != y or x in dup)]  # Time complexity: O(n)
 
 
 #                    nums             sum      res
 assert( sorted(pairs([],                0)) == [] )
+assert( sorted(pairs([1],               1)) == [] )
 assert( sorted(pairs([1,1],             2)) == [(1,1)] )
 assert( sorted(pairs([1,1,1],           2)) == [(1,1)] )
 assert( sorted(pairs([1,1,2],           2)) == [(1,1)] )
