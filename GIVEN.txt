@@ -1,0 +1,7 @@
+GIVEN:
+
+Implement a function which takes 2 arguments:
+a list of numbers and another number as a 2nd argument.
+The function shall return a list of unique pairs of numbers from the list,
+which sum equals the 2nd argument.
+
